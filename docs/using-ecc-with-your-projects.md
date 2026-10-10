@@ -158,6 +158,45 @@ claude
 
 ---
 
+## Updating ECC
+
+To get the latest features and fixes:
+
+```bash
+# Navigate to your ECC directory
+cd ~/ecc
+
+# Pull latest changes
+git pull
+
+# Reinstall to update global configuration
+node scripts/ecc.js setup
+```
+
+**Create an alias for convenience:**
+
+Add to your `.bashrc` or `.zshrc`:
+```bash
+alias ecc-update="cd ~/ecc && git pull && node scripts/ecc.js setup && cd -"
+```
+
+Then simply run:
+```bash
+ecc-update
+```
+
+**Checking for updates:**
+
+```bash
+cd ~/ecc
+git fetch
+git status  # Shows if you're behind origin/main
+```
+
+**Note:** Updates to ECC only affect new Claude sessions. Restart your Claude CLI after updating.
+
+---
+
 ## Complete Removal (If Needed)
 
 To completely uninstall ECC:
