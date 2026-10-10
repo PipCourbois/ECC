@@ -5,21 +5,19 @@ How do I use ECC's powerful development tools without mixing the ECC framework c
 
 ## The Solution: Global Installation + Selective Activation
 
-### Command Namespacing (Avoiding Conflicts)
+### ECC Commands Available Globally
 
-If you use multiple Claude Code plugins, you may encounter command name conflicts. For example, multiple plugins might provide a `/plan` or `/review` command.
+Once ECC is installed, you'll have access to powerful development commands from any project:
 
-**ECC uses the `ecc:` namespace** to avoid conflicts:
+- `/plan` - Implementation planning
+- `/code-review` - Code quality review
+- `/build-fix` - Fix build errors
+- `/feature-dev` - Feature development workflow
+- `/ecc-guide` - ECC documentation and help
 
-- `ecc:plan` - Implementation planning
-- `ecc:tdd` - Test-driven development workflow
-- `ecc:code-review` - Code quality review
-- `ecc:build-fix` - Fix build errors
-- `ecc:e2e` - Generate and run E2E tests
-- `ecc:learn` - Extract patterns from sessions
-- `ecc:skill-create` - Generate skills from git history
+And many more specialized commands for different languages and frameworks.
 
-This allows ECC to coexist with other plugins without shadowing their commands or being shadowed by them.
+**Note:** If you use multiple Claude Code plugins with conflicting command names, consider renaming commands or using command prefixes to avoid conflicts.
 
 ### Step 1: Install ECC Globally (One Time)
 
@@ -62,7 +60,7 @@ my-awesome-app/
 cd ~/projects/complex-app
 export ECC_HOOK_PROFILE=full
 claude
-# Now you have access to ecc:plan, ecc:tdd, ecc:code-review, auto-formatting, etc.
+# Now you have access to /plan, /code-review, /build-fix, auto-formatting, etc.
 ```
 
 **For Simple Projects (Disable ECC):**
@@ -150,7 +148,7 @@ claude
 | Feature | Plain Claude | ECC Minimal | ECC Full |
 |---------|-------------|-------------|----------|
 | Basic coding help | ✅ | ✅ | ✅ |
-| `ecc:plan`, `ecc:tdd` commands | ❌ | ✅ | ✅ |
+| `/plan`, `/code-review` commands | ❌ | ✅ | ✅ |
 | Auto-formatting hooks | ❌ | ❌ | ✅ |
 | TDD gates | ❌ | ❌ | ✅ |
 | Code review agents | ❌ | ✅ | ✅ |
